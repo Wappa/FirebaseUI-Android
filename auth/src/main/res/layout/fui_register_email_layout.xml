@@ -80,7 +80,7 @@
 
             <TextView
                 android:id="@+id/email_footer_tos_and_pp_text"
-                style="@style/FirebaseUI.PrivacyFooter" />
+                style="@style/FirebaseUI.TermsFooter" />
 
         </LinearLayout>
 

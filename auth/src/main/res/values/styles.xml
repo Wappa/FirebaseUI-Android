@@ -279,4 +279,14 @@
         <item name="android:textIsSelectable">false</item>
     </style>
 
+    <style name="FirebaseUI.TermsFooter">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/fui_field_padding_vert</item>
+        <item name="android:layout_marginBottom">@dimen/fui_field_padding_vert</item>
+        <item name="android:minHeight">@dimen/fui_min_height_target</item>
+        <item name="android:gravity">end|center_vertical</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
+
 </resources>

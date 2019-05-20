@@ -190,10 +190,33 @@ public class CheckEmailFragment extends FragmentBase implements
     }
 
     private void validateAndProceed() {
-        String email = mEmailEditText.getText().toString();
+
+        final String email = mEmailEditText.getText().toString();
+
+        /*
         if (mEmailFieldValidator.validate(email)) {
             mHandler.fetchProvider(email);
         }
+        */
+
+        /************* HACK Yuka *************/
+
+        showProgress(R.string.fui_progress_dialog_loading);
+
+        mEmailFieldValidator.checkEmail(email, new CheckEmailCallback() {
+            @Override
+            public void onSuccess(boolean value) {
+                mHandler.fetchProvider(email);
+            }
+
+            @Override
+            public void onError() {
+                hideProgress();
+            }
+        });
+
+        /*************************************/
+
     }
 
     @Override
@@ -233,4 +256,12 @@ public class CheckEmailFragment extends FragmentBase implements
          */
         void onDeveloperFailure(Exception e);
     }
+
+    /************* HACK Yuka *************/
+    public interface CheckEmailCallback {
+        void onSuccess(boolean value);
+
+        void onError();
+    }
+    /*************************************/
 }

@@ -40,6 +40,8 @@ dependencies {
     compileOnly(Config.Libs.Provider.facebook)
     implementation(Config.Libs.Androidx.legacySupportv4) // Needed to override deps
     implementation(Config.Libs.Androidx.cardView) // Needed to override Facebook
+    compileOnly(Config.Libs.Misc.retrofit)
+    compileOnly(Config.Libs.Misc.retrofitGson)
 
     testImplementation(Config.Libs.Test.junit)
     testImplementation(Config.Libs.Test.truth)
